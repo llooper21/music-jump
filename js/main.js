@@ -31,6 +31,15 @@ function create() {
   //game.stage.backgroundColor = '#3498db';
   game.stage.backgroundColor = '#00BFFF';
 
+  //This sets up a group call platforms. For future functionality we can set all horizontal surfaces to this group.
+platforms = game.add.group();
+platforms.enableBody = true;
+
+//This creates the ground, and makes it solid object the player will not pass through.
+ground = platforms.create(0, GAME_HEIGHT, 'ground');
+ground.anchor.setTo(0,1);
+ground.scale.setTo(4, 1);
+
   //This creates the player character at the bottom left side of the screen.
   player = game.add.sprite(game.width/8, game.world.height*(7/8), 'player');
 
